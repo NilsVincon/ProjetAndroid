@@ -33,7 +33,7 @@ class CountryAdapter : RecyclerView.Adapter<CountryAdapter.CountryViewHolder>() 
     override fun getItemCount() = countries.size
 
     fun updateCountries(newCountries: List<Country>) {
-        countries = newCountries
+        countries = newCountries.sortedBy { it.name.common }
         notifyDataSetChanged()
     }
 }
