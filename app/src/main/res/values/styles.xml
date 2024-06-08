@@ -1,14 +1,13 @@
 <resources>
     <!-- Base application theme -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryDark">@color/purple_700</item>
         <item name="colorAccent">@color/teal_200</item>
+        <item name="windowActionBar">false</item>
+    </style>
+    <style name="Theme.Projet_Android_Guilhem_Nils" parent="AppTheme">
     </style>
 
-    <!-- Theme for HomeActivity -->
-    <style name="Theme.Projet_Android_Guilhem_Nils" parent="AppTheme">
-        <!-- Customize your theme here -->
-    </style>
 </resources>

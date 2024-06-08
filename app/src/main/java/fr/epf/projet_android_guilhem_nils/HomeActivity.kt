@@ -50,7 +50,7 @@ class HomeActivity : AppCompatActivity() {
     private fun setupRecyclerView() {
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = GridLayoutManager(this, 2)
-        countryAdapter = CountryAdapter()
+        countryAdapter = CountryAdapter(::onCountryClicked)
         recyclerView.adapter = countryAdapter
     }
 
@@ -68,6 +68,13 @@ class HomeActivity : AppCompatActivity() {
             }
         )
     }
+
+    private fun onCountryClicked(country: Country) {
+        val intent = Intent(this, CountryDetailsActivity::class.java)
+        intent.putExtra("country", country)
+        startActivity(intent)
+    }
+
 
     private fun performSearch(query: String) {
         viewModel.filterCountries(query) { filteredCountries ->

@@ -8,7 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class CountryAdapter : RecyclerView.Adapter<CountryAdapter.CountryViewHolder>() {
+class CountryAdapter(
+    private val onCountryClicked: (Country) -> Unit
+) : RecyclerView.Adapter<CountryAdapter.CountryViewHolder>() {
 
     private var countries: List<Country> = listOf()
 
@@ -28,6 +30,9 @@ class CountryAdapter : RecyclerView.Adapter<CountryAdapter.CountryViewHolder>() 
         Glide.with(holder.itemView.context)
             .load(country.flags.png)
             .into(holder.countryFlag)
+        holder.itemView.setOnClickListener {
+            onCountryClicked(country)
+        }
     }
 
     override fun getItemCount() = countries.size
