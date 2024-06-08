@@ -44,10 +44,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         setupRecyclerView()
-        observeViewModel()
-
-        // Charger les pays au démarrage
-        viewModel.loadAllCountries()
+        loadCountries()
     }
 
     private fun setupRecyclerView() {
@@ -57,17 +54,26 @@ class HomeActivity : AppCompatActivity() {
         recyclerView.adapter = countryAdapter
     }
 
-    private fun observeViewModel() {
-        viewModel.countries.observe(this) { countries ->
-            Log.d("HomeActivity", "Updating RecyclerView with ${countries.size} countries")
-            countryAdapter.updateCountries(countries)
-        }
-        viewModel.errorMessage.observe(this) { errorMessage ->
-            Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show()
-        }
+    private fun loadCountries() {
+        viewModel.loadAllCountries(
+            onCountriesLoaded = { countries ->
+                runOnUiThread {
+                    countryAdapter.updateCountries(countries)
+                }
+            },
+            onError = { errorMessage ->
+                runOnUiThread {
+                    Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show()
+                }
+            }
+        )
     }
 
     private fun performSearch(query: String) {
-        viewModel.filterCountries(query)
+        viewModel.filterCountries(query) { filteredCountries ->
+            runOnUiThread {
+                countryAdapter.updateCountries(filteredCountries)
+            }
+        }
     }
 }
