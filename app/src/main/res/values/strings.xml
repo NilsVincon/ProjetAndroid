@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Projet_Android_Guilhem_Nils</string>
+    <string name="search_text_entry">Entrez un pays ou une capitale</string>
+    <string name="image_button_content">search_icon</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="img_content">Drapeau du pays séléctionné</string>
+</resources>
