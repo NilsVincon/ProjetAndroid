@@ -8,4 +8,6 @@
     <string name="population_text">Population :</string>
     <string name="superficie_text">Superficie (m²) :</string>
     <string name="langues_text">Langues :</string>
+    <string name="home_title_toolbar">Accueil</string>
+    <string name="details_title">Details</string>
 </resources>
