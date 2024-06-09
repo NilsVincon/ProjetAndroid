@@ -6,8 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
-
-    <!-- Search Layout -->
     <LinearLayout
         android:id="@+id/searchLayout"
         android:orientation="horizontal"
@@ -37,8 +35,6 @@
             android:contentDescription="@string/image_button_content"
             android:padding="8dp" />
     </LinearLayout>
-
-    <!-- RecyclerView for displaying countries -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="0dp"
