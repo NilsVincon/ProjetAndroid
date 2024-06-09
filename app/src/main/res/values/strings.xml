@@ -6,6 +6,6 @@
     <string name="img_content">Drapeau du pays séléctionné</string>
     <string name="capital_text">Capitale :</string>
     <string name="population_text">Population :</string>
-    <string name="superficie_text">Superficie :</string>
+    <string name="superficie_text">Superficie (m²) :</string>
     <string name="langues_text">Langues :</string>
 </resources>

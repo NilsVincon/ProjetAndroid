@@ -15,7 +15,7 @@ object RestCountriesApiService {
 
     private val client = OkHttpClient.Builder()
         .addInterceptor(httpLoggingInterceptor)
-        .connectTimeout(45,TimeUnit.SECONDS)
+        .connectTimeout(120,TimeUnit.SECONDS)
         .readTimeout(45,TimeUnit.SECONDS)
         .build()
 
