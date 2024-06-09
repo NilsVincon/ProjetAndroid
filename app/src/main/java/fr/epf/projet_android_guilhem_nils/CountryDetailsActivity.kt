@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import com.bumptech.glide.Glide
 
+//Activité pour les details des pays
 class CountryDetailsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

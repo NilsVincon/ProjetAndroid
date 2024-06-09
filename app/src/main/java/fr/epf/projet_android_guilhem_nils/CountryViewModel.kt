@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 
-
+//ViewModel qui gère les données pour les activités liées aux pays
 class CountryViewModel : ViewModel() {
         var allCountries: List<Country> = emptyList()
         var countries: List<Country> = emptyList()
@@ -14,13 +14,13 @@ class CountryViewModel : ViewModel() {
                 viewModelScope.launch {
                         try {
                                 val countriesResponse = RestCountriesApiService.api.getAllCountries()
-                                Log.d("CountryViewModel", "Fetched countries: ${countriesResponse.size}")
+                                Log.d("CountryViewModel", "Countries: ${countriesResponse.size}")
                                 allCountries = countriesResponse
                                 countries = countriesResponse
                                 onCountriesLoaded(countries)
                         } catch (e: Exception) {
-                                Log.e("CountryViewModel", "Failed to load countries", e)
-                                onError("Failed to load countries: ${e.message}")
+                                Log.e("CountryViewModel", "Echec pour load", e)
+                                onError("Echec pour load ${e.message}")
                         }
                 }
         }
@@ -30,7 +30,7 @@ class CountryViewModel : ViewModel() {
                         it.name.common.contains(query, ignoreCase = true) ||
                                 (it.capital != null && it.capital.any { capital -> capital.contains(query, ignoreCase = true) })
                 }
-                Log.d("CountryViewModel", "Filtered countries: ${filteredCountries.size}")
+                Log.d("CountryViewModel", "Pays Filtré: ${filteredCountries.size}")
                 countries = filteredCountries
                 onCountriesFiltered(countries)
         }}

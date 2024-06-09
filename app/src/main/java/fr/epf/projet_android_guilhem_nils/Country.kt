@@ -2,7 +2,7 @@ package fr.epf.projet_android_guilhem_nils
 
 import com.squareup.moshi.Json
 import java.io.Serializable
-
+//Modèle des données pour un pays
 data class Country(
     @Json(name = "name") val name: Name,
     @Json(name = "capital") val capital: List<String>,
