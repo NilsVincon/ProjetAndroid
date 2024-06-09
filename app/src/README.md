@@ -34,14 +34,9 @@ Affichage des Détails du Pays: En cliquant sur un pays dans la liste, l'utilisa
         - Superficie
         - Langues Parlées
 
-#### Navigation
-
-- Retour à la Page d'Accueil : Depuis la page de détails d'un pays, utilisez le bouton de retour pour revenir à la liste des pays.
-- Recherche de Nouveaux Pays : À tout moment, utilisez la barre de recherche sur la page d'accueil pour effectuer une nouvelle recherche.
-
 #### Notes et Remarques
 
-- Il est nécéssaire d'avoir une connexion Internet active pour charger les données des pays depuis l'API.
-- L'API en fonctionne pas tout le temps, et fail souvent.
+- Il est nécéssaire d'avoir une connexion Internet pour charger les données des pays depuis l'API.
+- L'API ne fonctionne pas tout le temps, et fail souvent.
 - Les fonctionnalités de favoris et de gestion de base de données locale ne sont pas implémentées dans cette version de l'application, dû au manque de connaissances, mais aussi au fait que l'API prennait longtemps avant de fonctionner.
 - Nous avons essayé d'implémenter une base de donnée via Room, avec les Dao etc, mais elle n'est pas disponible sur ce rendu, qui lui est fonctionnel.
